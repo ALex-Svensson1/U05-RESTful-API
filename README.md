@@ -1,8 +1,8 @@
 # U05-RESTful-API
 
-Projektbeskrivning:
+## Projektbeskrivning:
 
-Installation och körning
+## Installation och körning
 1. Klona repot:
    git clone https://github.com/ALex-Svensson1/U05-RESTful-API
 
@@ -16,8 +16,10 @@ Installation och körning
 4. Starta servern
     npm run dev
 
+## Deploy
+https://u05-movie-api.onrender.com
 
-Endpoints
+## Endpoints Lokal
 
 1. Skapa film (POST)
 curl -X POST http://localhost:5000/api/movies \
@@ -37,3 +39,25 @@ curl -X PUT http://localhost:5000/api/movies/<id> \
 
 5. Ta bort film (DELETE)
 curl -X DELETE http://localhost:5000/api/movies/<id>
+
+
+## Endpoints Deployed
+
+1. Skapa film (POST)
+curl -X POST https://u05-movie-api.onrender.com/api/movies \
+-H "Content-Type: application/json" \
+-d "{\"title\":\"Interstellar\",\"director\":\"Christopher Nolan\",\"year\":2014,\"genre\":\"Sci-Fi\"}"
+
+2. Hämta alla filmer (GET)
+curl https://u05-movie-api.onrender.com/api/movies
+
+3. Hämta en film med ID (GET)
+curl https://u05-movie-api.onrender.com/api/movies/<id>
+
+4. Uppdatera film (PUT)
+curl -X PUT https://u05-movie-api.onrender.com/api/movies/<id> \
+-H "Content-Type: application/json" \
+-d "{\"title\":\"Interstellar 2\",\"year\":2025}"
+
+5. Ta bort film (DELETE)
+curl -X DELETE https://u05-movie-api.onrender.com/api/movies/<id>
